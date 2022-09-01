@@ -5,12 +5,17 @@
 <input type="input" [(ngModel)]="title" />
 
 <ol>
-  <li *ngFor="let item of todos">
-    {{ item }}
-    <button (click)="removeItem(item)">X</button>
+  <li *ngFor="let todo of todos; let i = index">
+    {{ todo }}
+    <button (click)="removeItem(i)">X</button>
   </li>
 </ol>
 
 <input type="input" [(ngModel)]="inputField" />
-
 <button type="button" (click)="addItem()">Add</button>
+
+<h1>*ngIf in Angular</h1>
+<h2 *ngIf="true">Hi, Youtube</h2>
+
+<h2 *ngIf="true; else elseBlock">Hi, Youtube</h2>
+<ng-template #elseBlock><h2>Hi, Twitter</h2></ng-template>
