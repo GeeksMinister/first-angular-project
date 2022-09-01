@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms'
+
 
 @Component({
   selector: 'app-root',
@@ -6,28 +8,34 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'first-angular-project';
+  startValue = 5;
+  height = 4;
+  public dictionary = new Map();
 
-  todos = ['Angular', 'Typescript', 'C#', 'ASP.NET']
+  public calculate() {
+    this.dictionary.clear()
+    this.multiplication();
+    this.division();
+    this.startValue
+    this.startValue = 2;
+  }
 
-  public inputField: string = "";   // try nullable
-  public addItem() {
-    if (this.inputField.trim() != "") {
-      this.todos.push(this.inputField);
-      this.inputField = "";
-    } else {
-      alert('Type in a value to add to the list');
+  multiplication() {
+    let count = 1;
+    while (this.height > count) {
+      count++;
+      const expression = `${this.startValue} * ${count}`;
+      this.dictionary.set(expression, this.startValue = (this.startValue * count))
     }
   }
 
-  public removeItem(item: string) {
-    // const i: number = this.todos.indexOf(item);
-    this.todos.splice(this.todos.indexOf(item), 1)
+  division() {
+    let count = 1;
+    while (this.height > count) {
+      count++;
+      const expression = `${this.startValue} / ${count}`;
+      this.dictionary.set(expression, this.startValue = (this.startValue / count))
+    }
   }
-
-  alertMessage(message: string) {
-    alert(message);
-  }
-
 
 }

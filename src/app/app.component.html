@@ -1,21 +1,15 @@
-<h1>{{ title }}</h1>
+<fieldset>
+  <input type="text" [(ngModel)]="startValue" />
+  <br />
+  <br />
+  <input type="text" [(ngModel)]="height" />
+  <br />
+  <br />
+  <button type="reset" (click)="calculate()">Calculate</button>
+</fieldset>
 
-<button type="button" (click)="alertMessage(title)">Hello</button>
-
-<input type="input" [(ngModel)]="title" />
-
-<ol>
-  <li *ngFor="let todo of todos; let i = index">
-    {{ todo }}
-    <button (click)="removeItem(i)">X</button>
+<div *ngIf="dictionary.size > 0">
+  <li *ngFor="let expression of dictionary | keyvalue">
+    {{ expression.key }} = {{ expression.value }}
   </li>
-</ol>
-
-<input type="input" [(ngModel)]="inputField" />
-<button type="button" (click)="addItem()">Add</button>
-
-<h1>*ngIf in Angular</h1>
-<h2 *ngIf="true">Hi, Youtube</h2>
-
-<h2 *ngIf="true; else elseBlock">Hi, Youtube</h2>
-<ng-template #elseBlock><h2>Hi, Twitter</h2></ng-template>
+</div>
