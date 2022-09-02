@@ -3,23 +3,19 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
-import { HelloWorld } from './hello-world.component';
-import { FormsModule} from '@angular/forms'
-
-import { ParentComponent } from './parent/parent.component';
-import { ChildComponent } from './child/child.component';
+import { FormsModule } from '@angular/forms';
+import { InputPsKwComponent } from './input-ps-kw/input-ps-kw.component';
+import { TestComponent } from './test/test.component'
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HelloWorld,
-    
+    InputPsKwComponent,
+    TestComponent,
 
-    ParentComponent,
-    ChildComponent
   ],
+
   imports: [
     BrowserModule,
     AppRoutingModule,

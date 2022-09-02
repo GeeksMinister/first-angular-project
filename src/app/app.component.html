@@ -1,15 +1,32 @@
-<fieldset>
-  <input type="text" [(ngModel)]="startValue" />
-  <br />
-  <br />
-  <input type="text" [(ngModel)]="height" />
-  <br />
-  <br />
-  <button type="reset" (click)="calculate()">Calculate</button>
-</fieldset>
-
-<div *ngIf="dictionary.size > 0">
-  <li *ngFor="let expression of dictionary | keyvalue">
-    {{ expression.key }} = {{ expression.value }}
-  </li>
-</div>
+<router-outlet></router-outlet>
+<table>
+  <thead>
+    <tr>
+      <th>Car Model</th>
+      <th>Power</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>VW K&AUML:Fer 1936</td>
+      <td>
+        22 PS
+        <app-input-ps-kw
+          [(value)]="kaeferPower"
+          [(uom)]="kaeferUom"
+        ></app-input-ps-kw>
+      </td>
+    </tr>
+    <tr>
+      <td>Ferrari LaFerrari</td>
+      <td>
+        588 KW
+        <app-input-ps-kw [value]="588" [uom]="'KW'"></app-input-ps-kw>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br />
+<br />
+<br />
+<h1>Our VW fre has {{ kaeferPower }} {{ kaeferUom }}</h1>

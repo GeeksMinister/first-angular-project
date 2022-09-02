@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ChildComponent } from './child.component';
+import { InputPsKwComponent } from './input-ps-kw.component';
 
-describe('ChildComponent', () => {
-  let component: ChildComponent;
-  let fixture: ComponentFixture<ChildComponent>;
+describe('InputPsKwComponent', () => {
+  let component: InputPsKwComponent;
+  let fixture: ComponentFixture<InputPsKwComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ChildComponent ]
+      declarations: [ InputPsKwComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ChildComponent);
+    fixture = TestBed.createComponent(InputPsKwComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
