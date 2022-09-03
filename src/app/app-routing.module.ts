@@ -1,15 +1,14 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { TestComponent } from './test/test.component';
+// import { NgModule } from '@angular/core';
+// import { RouterModule, Routes } from '@angular/router';
 
-const routes: Routes = [
-  { path: 'test', component: TestComponent },
-  { path: '', pathMatch: 'full', redirectTo: 'test' }
+// const routes: Routes = [
+//   // { path: 'input-ps-kw', component: InputPsKwComponent },
+//   { path: '', pathMatch: 'full', redirectTo: 'AppComponent' },
+//   { path: '', pathMatch: 'full', redirectTo: 'AppComponent' }
+// ];
 
-];
-
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
-})
-export class AppRoutingModule { }
+// @NgModule({
+//   imports: [RouterModule.forRoot(routes)],
+//   exports: [RouterModule]
+// })
+// export class AppRoutingModule { }

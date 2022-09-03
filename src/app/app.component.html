@@ -1,32 +1,60 @@
-<router-outlet></router-outlet>
-<table>
-  <thead>
-    <tr>
-      <th>Car Model</th>
-      <th>Power</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>VW K&AUML:Fer 1936</td>
-      <td>
-        22 PS
-        <app-input-ps-kw
-          [(value)]="kaeferPower"
-          [(uom)]="kaeferUom"
-        ></app-input-ps-kw>
-      </td>
-    </tr>
-    <tr>
-      <td>Ferrari LaFerrari</td>
-      <td>
-        588 KW
-        <app-input-ps-kw [value]="588" [uom]="'KW'"></app-input-ps-kw>
-      </td>
-    </tr>
-  </tbody>
-</table>
-<br />
-<br />
-<br />
-<h1>Our VW fre has {{ kaeferPower }} {{ kaeferUom }}</h1>
+<h1 class="text-danger">{{ title }}</h1>
+
+<!-- <ul>
+  <li><a routerLink="test">test</a></li>
+  <li><a routerLink="input-ps-kw">input Component</a></li>
+  <li><a routerLink="input-ps-kw">input-ps-kw</a></li>
+</ul>
+
+-->
+
+<div class="row p-4 ">
+  <h4 class="text-primary col-9">
+    Registered Employees <span class="small">{{ employees.length }}</span>
+  </h4>
+  <div class="text-end ">
+    <a href="Addemployee" class="btn btn-success fw-bold">Assgin Employee</a>
+  </div>
+</div>
+
+<em class="h3 m-5" *ngIf="employees == null; else loaded">Loading ......</em>
+
+<ng-template #loaded >
+  <em class="h3 m-5"*ngIf="employees.length === 0 else received">No Employee Was Found or Returned From Database</em>
+</ng-template>
+
+<ng-template #received>
+
+  <div class="container-fluid mt-0 p-3 overflow-auto">
+    <table class="table table-bordered table-striped">
+      <thead class="table-dark">
+        <tr class="border-1 border-dark">
+          <th class="text-center">Employee</th>
+          <th class="text-center">Email</th>
+          <th class="text-center">City</th>
+          <th class="text-center">Phone</th>
+          <th class="text-center">Role</th>
+          <th class="text-center">Changes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="border-1 border-secondary" *ngFor="let emp of employees">
+          <td class="col-4 align-middle text-lg-center fw-bold">
+            {{ getFullName(emp) }}
+          </td>
+          <td class="col-4 text-sm-center align-middle">{{ emp.email }}</td>
+          <td class="col-2 text-sm-center align-middle">{{ emp.city }}</td>
+          <td class="col-1 text-sm-center align-middle">{{ emp.phone }}</td>
+          <td class="col-1 text-sm-center align-middle">{{ emp.role }}</td>
+          <td>
+            <div class="text-center">
+              <a href="" class="btn btn-primary p-1 m-1">Details</a>
+              <a href="" class="btn btn-warning p-1">Update</a>
+              <a href="" class="btn btn-danger p-1 mt-1">Delete</a>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</ng-template>
