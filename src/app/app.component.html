@@ -34,18 +34,20 @@
       <tbody>
         <tr class="border-1 border-dark" *ngFor="let emp of employees">
 
-          <td class="col-4">
-            <a class="btn btn-link btn-outline-info text-opacity-100 text-primary rounded-pill fw-bold text-decoration-none p-1" href="" >{{ getFullName(emp) }}</a>
+          <td class="col-2">
+            <a class="btn btn-link btn-outline-info p-1 rounded-pill 
+            text-opacity-100 text-primary fw-bold text-decoration-none " 
+            href="" >{{ getFullName(emp) }}</a>
           </td>
           
-          <td class="col-4">{{ emp.email }}</td>
+          <td class="col-2">{{ emp.email }}</td>
           <td class="col-2">{{ emp.city }}</td>
           <td class="col-1">{{ emp.phone }}</td>
           <td class="col-1">{{ emp.role }}</td>
-          <td>
-            <div class="text-center">
-              <a href="" class="btn btn-warning p-1 mt-1 mb-1">Update</a>
-              <a href="" class="btn btn-danger p-1">Delete&nbsp;</a>
+          <td class="col-1">
+            <div class="row justify-content-evenly">
+              <a href="" class="btn btn-warning mb-1 mt-1 p-1 w-auto">Update</a>
+              <a href="" class="btn btn-danger mb-1 mt-1 p-1 w-auto">Delete&nbsp;</a>
             </div>
           </td>
         </tr>
