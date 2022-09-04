@@ -8,18 +8,19 @@ import { EmployeeService } from './services/employee-service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Employees';
-  employees: Employee[] = [];
   constructor(private employeeService: EmployeeService) { }
 
+  title = 'Employees';
+  employees: Employee[] = [];
+  getFullName = (emp: Employee)  => emp.firstName + ' ' + emp.lastName;
+  
   ngOnInit() {
     this.employeeService.getEmployees()
-      .subscribe((result: Employee[]) => (this.employees = result));
+    .subscribe((result: Employee[]) => (this.employees = result));
   }
+  
 
-  getFullName = (emp: Employee): string => {
-    return emp.firstName + ' ' + emp.lastName;
-  }
+  
 
 }
 

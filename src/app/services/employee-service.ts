@@ -9,12 +9,14 @@ import { Employee } from '../models/Employee';
 })
 
 export class EmployeeService {
-    private url = '';
-
     constructor(private http: HttpClient) { }
+
+    private url = '';
 
     public getEmployees(): Observable<Employee[]> {
         return this.http.get<Employee[]>(`${environment.apiUrl}/${this.url}`);
     }
+
+    
 
 }

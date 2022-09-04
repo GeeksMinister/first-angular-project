@@ -1,4 +1,3 @@
-<h1 class="text-danger">{{ title }}</h1>
 
 <!-- <ul>
   <li><a routerLink="test">test</a></li>
@@ -8,49 +7,45 @@
 
 -->
 
-<div class="row p-4 ">
-  <h4 class="text-primary col-9">
-    Registered Employees <span class="small">{{ employees.length }}</span>
+<div class="row pt-5 pb-2 pe-3 ">
+  <h4 class="text-secondary fw-bold col-9">
+    Registered Employees (<span class="text-primary small">{{ employees.length }})</span>
   </h4>
   <div class="text-end ">
     <a href="Addemployee" class="btn btn-success fw-bold">Assgin Employee</a>
   </div>
 </div>
 
-<em class="h3 m-5" *ngIf="employees == null; else loaded">Loading ......</em>
+<em class="h3 m-5" *ngIf="employees.length === 0; else loaded">Loading ......</em>
+<ng-template #loaded>
 
-<ng-template #loaded >
-  <em class="h3 m-5"*ngIf="employees.length === 0 else received">No Employee Was Found or Returned From Database</em>
-</ng-template>
-
-<ng-template #received>
-
-  <div class="container-fluid mt-0 p-3 overflow-auto">
-    <table class="table table-bordered table-striped">
+  <div class="container-fluid mt-0 mb-3 p-3 overflow-auto">
+    <table class="table table-bordered table-striped align-middle text-center">
       <thead class="table-dark">
         <tr class="border-1 border-dark">
-          <th class="text-center">Employee</th>
-          <th class="text-center">Email</th>
-          <th class="text-center">City</th>
-          <th class="text-center">Phone</th>
-          <th class="text-center">Role</th>
-          <th class="text-center">Changes</th>
+          <th>Employee</th>
+          <th>Email</th>
+          <th>City</th>
+          <th>Phone</th>
+          <th>Role</th>
+          <th>Changes</th>
         </tr>
       </thead>
       <tbody>
-        <tr class="border-1 border-secondary" *ngFor="let emp of employees">
-          <td class="col-4 align-middle text-lg-center fw-bold">
-            {{ getFullName(emp) }}
+        <tr class="border-1 border-dark" *ngFor="let emp of employees">
+
+          <td class="col-4">
+            <a class="btn btn-link btn-outline-info text-opacity-100 text-primary rounded-pill fw-bold text-decoration-none p-1" href="" >{{ getFullName(emp) }}</a>
           </td>
-          <td class="col-4 text-sm-center align-middle">{{ emp.email }}</td>
-          <td class="col-2 text-sm-center align-middle">{{ emp.city }}</td>
-          <td class="col-1 text-sm-center align-middle">{{ emp.phone }}</td>
-          <td class="col-1 text-sm-center align-middle">{{ emp.role }}</td>
+          
+          <td class="col-4">{{ emp.email }}</td>
+          <td class="col-2">{{ emp.city }}</td>
+          <td class="col-1">{{ emp.phone }}</td>
+          <td class="col-1">{{ emp.role }}</td>
           <td>
             <div class="text-center">
-              <a href="" class="btn btn-primary p-1 m-1">Details</a>
-              <a href="" class="btn btn-warning p-1">Update</a>
-              <a href="" class="btn btn-danger p-1 mt-1">Delete</a>
+              <a href="" class="btn btn-warning p-1 mt-1 mb-1">Update</a>
+              <a href="" class="btn btn-danger p-1">Delete&nbsp;</a>
             </div>
           </td>
         </tr>
