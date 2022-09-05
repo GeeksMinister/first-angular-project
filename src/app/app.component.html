@@ -9,10 +9,10 @@
 
 <div class="row pt-5 pb-2 pe-3 ">
   <h4 class="text-secondary fw-bold col-9">
-    Registered Employees (<span class="text-primary small">{{ employees.length }})</span>
+    Registered Employees (<span class="h6 text-primary small">{{ employees.length }})</span>
   </h4>
   <div class="text-end ">
-    <a href="Addemployee" class="btn btn-success fw-bold">Assgin Employee</a>
+    <button  class="btn btn-success fw-bold" (click)="openModal()">Assgin Employee</button>
   </div>
 </div>
 
@@ -46,8 +46,8 @@
           <td class="col-1">{{ emp.role }}</td>
           <td class="col-1">
             <div class="row justify-content-evenly">
-              <a href="" class="btn btn-warning mb-1 mt-1 p-1 w-auto">Update</a>
-              <a href="" class="btn btn-danger mb-1 mt-1 p-1 w-auto">Delete&nbsp;</a>
+              <a href="" class="btn btn-warning mb-1 mt-1 p-1 w-auto rounded-pill" >Update</a>
+              <a href="" class="btn btn-danger mb-1 mt-1 p-1 w-auto rounded-pill">Delete&nbsp;</a>
             </div>
           </td>
         </tr>
@@ -55,3 +55,21 @@
     </table>
   </div>
 </ng-template>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" (click)="doSomething()">Do Something</button>
+      </div>
+    </div>
+  </div>
+</div>
